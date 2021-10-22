@@ -1,0 +1,52 @@
+unit frmRelatorioCliente;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, frmRelatorioImpressao, Data.FMTBcd,
+  QRCtrls, Data.DB, Data.SqlExpr, QuickRpt, Vcl.ExtCtrls;
+
+type
+  TformRelatorioCliente = class(TformRelatorioImpressao)
+    QRDBText1: TQRDBText;
+    QRDBText5: TQRDBText;
+    SQLQuery1idClientes: TIntegerField;
+    SQLQuery1NomeCliente: TStringField;
+    SQLQuery1dataNascimento: TDateField;
+    SQLQuery1sexoCliente: TStringField;
+    SQLQuery1enderecoCliente: TStringField;
+    SQLQuery1cpfCliente: TStringField;
+    SQLQuery1rgCliente: TStringField;
+    SQLQuery1pesoCliente: TFMTBCDField;
+    SQLQuery1alturaCliente: TFMTBCDField;
+    SQLQuery1Cidades_idCidade: TIntegerField;
+    SQLQuery1cepCliente: TStringField;
+    SQLQuery1bairroCliente: TStringField;
+    QRDBText2: TQRDBText;
+    QRDBText3: TQRDBText;
+    QRSysData2: TQRSysData;
+    QRDBText4: TQRDBText;
+    QRLabel3: TQRLabel;
+    QRLabel4: TQRLabel;
+    QRLabel5: TQRLabel;
+    QRLabel6: TQRLabel;
+    QRDBText6: TQRDBText;
+    QRLabel7: TQRLabel;
+    QRLabel8: TQRLabel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  formRelatorioCliente: TformRelatorioCliente;
+
+implementation
+
+{$R *.dfm}
+
+uses dmConexao;
+
+end.

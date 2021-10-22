@@ -1,0 +1,117 @@
+inherited formManutMatricula: TformManutMatricula
+  Caption = 'formManutMatricula'
+  ExplicitWidth = 564
+  ExplicitHeight = 580
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label2: TLabel [0]
+    Left = 32
+    Top = 93
+    Width = 33
+    Height = 13
+    Caption = 'Cliente'
+  end
+  object Label3: TLabel [1]
+    Left = 32
+    Top = 165
+    Width = 84
+    Height = 13
+    Caption = 'Data da Matricula'
+  end
+  object Label4: TLabel [2]
+    Left = 354
+    Top = 165
+    Width = 24
+    Height = 13
+    Caption = 'Valor'
+  end
+  object Label1: TLabel [3]
+    Left = 32
+    Top = 245
+    Width = 24
+    Height = 13
+    Caption = 'Valor'
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 32
+    Top = 112
+    Width = 145
+    Height = 21
+    DataField = 'nomeCliente'
+    DataSource = formMatricula.DataSource1
+    TabOrder = 2
+  end
+  object DBEditDataMatricula: TDBEdit
+    Left = 32
+    Top = 184
+    Width = 121
+    Height = 21
+    DataField = 'dataMatricula'
+    DataSource = formMatricula.DataSource1
+    TabOrder = 3
+  end
+  object DBGrid1: TDBGrid
+    Left = 120
+    Top = 312
+    Width = 408
+    Height = 120
+    DataSource = DataSource1
+    TabOrder = 4
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'nomeServico'
+        Width = 294
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'precoServico'
+        Width = 75
+        Visible = True
+      end>
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 120
+    Top = 448
+    Width = 400
+    Height = 25
+    DataSource = DataSource1
+    TabOrder = 5
+  end
+  object DBEdit1: TDBEdit
+    Left = 330
+    Top = 120
+    Width = 121
+    Height = 21
+    DataField = 'dataVencimento'
+    DataSource = formMatricula.DataSource1
+    TabOrder = 6
+  end
+  object DBEdit2: TDBEdit
+    Left = 354
+    Top = 184
+    Width = 121
+    Height = 21
+    DataField = 'valorMatricula'
+    DataSource = formMatricula.DataSource1
+    TabOrder = 7
+  end
+  object DBLookupComboBox2: TDBLookupComboBox
+    Left = 32
+    Top = 264
+    Width = 145
+    Height = 21
+    TabOrder = 8
+  end
+  object DataSource1: TDataSource
+    DataSet = dtmMatricula.ClientDataSet2
+    Left = 264
+    Top = 176
+  end
+end

@@ -1,0 +1,30 @@
+unit frmMatricula;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, frmCadastro, Data.DB, Vcl.Grids,
+  Vcl.DBGrids, Vcl.DBCtrls, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Imaging.jpeg;
+
+type
+  TformMatricula = class(TformCadastro)
+    DBGrid2: TDBGrid;
+    DataSource2: TDataSource;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  formMatricula: TformMatricula;
+
+implementation
+
+{$R *.dfm}
+
+uses dmMatricula, dmConexao, frmManutMatricula;
+
+
+end.

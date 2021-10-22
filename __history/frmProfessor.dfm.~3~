@@ -1,0 +1,66 @@
+inherited formProfessor: TformProfessor
+  Caption = 'Cadastro de Professores'
+  ExplicitWidth = 1119
+  ExplicitHeight = 651
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited DBNavigator1: TDBNavigator
+    Hints.Strings = ()
+  end
+  inherited DBGrid1: TDBGrid
+    Top = 92
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'idProfessor'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nomeProfessor'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'dataNascimento'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'sexoProfessor'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'enderecoProfessor'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cpfProfessor'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'rgProfessor'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CidadeProfessor'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'EstadoProfessor'
+        Visible = True
+      end>
+  end
+  inherited btnPesquisar: TButton
+    Left = 851
+    ExplicitLeft = 851
+  end
+  inherited DataSource1: TDataSource
+    DataSet = dtmProfessor.ClientDataSet1
+  end
+end

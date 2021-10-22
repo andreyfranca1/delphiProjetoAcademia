@@ -1,0 +1,60 @@
+inherited formCidades: TformCidades
+  Caption = 'formCidades'
+  ExplicitWidth = 1135
+  ExplicitHeight = 651
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Image1: TImage
+    ExplicitLeft = 8
+    ExplicitTop = -5
+    ExplicitWidth = 1119
+  end
+  inherited DBNavigator1: TDBNavigator
+    Hints.Strings = ()
+  end
+  inherited Panel4: TPanel
+    ExplicitLeft = 31
+  end
+  inherited btnPrimeiro: TButton
+    ExplicitLeft = 31
+  end
+  inherited btnAnterior: TButton
+    ExplicitLeft = 112
+  end
+  inherited btnProximo: TButton
+    ExplicitLeft = 201
+  end
+  inherited btnUltimo: TButton
+    ExplicitLeft = 295
+  end
+  inherited DBGrid1: TDBGrid
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'idCidade'
+        Title.Caption = 'Codigo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nomeCidade'
+        Title.Caption = 'Nome da Cidade'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nomeEstado'
+        Title.Caption = 'Estado'
+        Width = 64
+        Visible = True
+      end>
+  end
+  inherited btnPesquisar: TButton
+    Top = 43
+    ExplicitTop = 43
+  end
+  inherited DataSource1: TDataSource
+    DataSet = dtmCidades.ClientDataSet1
+    OnDataChange = DataSource1DataChange
+  end
+end

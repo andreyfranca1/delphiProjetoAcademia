@@ -1,0 +1,58 @@
+unit frmManutClientes;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, frmManutCadastro, Vcl.StdCtrls,
+  Vcl.Mask, Vcl.DBCtrls;
+
+type
+  TformManutClientes = class(TformManutCadastro)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    DBEditNome: TDBEdit;
+    DBEditSexo: TDBEdit;
+    DBEditEndereco: TDBEdit;
+    DBEditDataNascimento: TDBEdit;
+    DBEditCPF: TDBEdit;
+    Label5: TLabel;
+    DBEditIdentidade: TDBEdit;
+    Label6: TLabel;
+    DBEditPeso: TDBEdit;
+    Label7: TLabel;
+    DBEditAltura: TDBEdit;
+    Label8: TLabel;
+    DBEditCEP: TDBEdit;
+    Label9: TLabel;
+    DBEditBairro: TDBEdit;
+    Label10: TLabel;
+    DBEdit1: TDBEdit;
+    Label11: TLabel;
+    DBEdit2: TDBEdit;
+    Label12: TLabel;
+    procedure Label5Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  formManutClientes: TformManutClientes;
+
+implementation
+
+{$R *.dfm}
+
+uses frmClientes;
+
+eprocedure TformManutClientes.Label5Click(Sender: TObject);
+begin
+  inherited;
+
+end;
+
+nd.

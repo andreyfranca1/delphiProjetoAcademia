@@ -1,0 +1,321 @@
+inherited dtmMatricula: TdtmMatricula
+  OldCreateOrder = True
+  Height = 683
+  Width = 586
+  inherited SQLQuery1: TSQLQuery
+    SQL.Strings = (
+      'select * from matriculas')
+    Top = 16
+    object SQLQuery1idCliente: TIntegerField
+      FieldName = 'idCliente'
+      Required = True
+    end
+    object SQLQuery1idMatricula: TIntegerField
+      FieldName = 'idMatricula'
+    end
+    object SQLQuery1dataMatricula: TDateField
+      FieldName = 'dataMatricula'
+      Required = True
+    end
+    object SQLQuery1dataVencimento: TDateField
+      FieldName = 'dataVencimento'
+      Required = True
+    end
+    object SQLQuery1valorMatricula: TFMTBCDField
+      FieldName = 'valorMatricula'
+      Required = True
+      Precision = 12
+      Size = 2
+    end
+    object SQLQuery1professores_idProfessor: TIntegerField
+      FieldName = 'professores_idProfessor'
+    end
+  end
+  inherited DataSetProvider1: TDataSetProvider
+    Top = 136
+  end
+  inherited ClientDataSet1: TClientDataSet
+    Top = 208
+    object ClientDataSet1idMatricula: TIntegerField
+      FieldName = 'idMatricula'
+    end
+    object ClientDataSet1dataMatricula: TDateField
+      FieldName = 'dataMatricula'
+      Required = True
+    end
+    object ClientDataSet1dataVencimento: TDateField
+      FieldName = 'dataVencimento'
+      Required = True
+    end
+    object ClientDataSet1idCliente: TIntegerField
+      FieldName = 'idCliente'
+      Required = True
+    end
+    object ClientDataSet1valorMatricula: TFMTBCDField
+      FieldName = 'valorMatricula'
+      Required = True
+      Precision = 12
+      Size = 2
+    end
+    object ClientDataSet1SQLQuery2: TDataSetField
+      FieldName = 'SQLQuery2'
+    end
+    object ClientDataSet1nomeCliente: TStringField
+      FieldKind = fkLookup
+      FieldName = 'nomeCliente'
+      LookupDataSet = ClientDataSetClientes
+      LookupKeyFields = 'idclientes'
+      LookupResultField = 'nomecliente'
+      KeyFields = 'idCliente'
+      Lookup = True
+    end
+    object ClientDataSet1professores_idProfessor: TIntegerField
+      FieldName = 'professores_idProfessor'
+    end
+    object ClientDataSet1nomeProfessor: TStringField
+      FieldKind = fkLookup
+      FieldName = 'nomeProfessor'
+      LookupDataSet = ClientDataSetProfessor
+      LookupKeyFields = 'idProfessor'
+      LookupResultField = 'nomeProfessor'
+      KeyFields = 'professores_idProfessor'
+      Lookup = True
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    Left = 40
+    Top = 80
+  end
+  object ClientDataSet2: TClientDataSet
+    Aggregates = <>
+    DataSetField = ClientDataSet1SQLQuery2
+    Params = <>
+    BeforePost = ClientDataSet2BeforePost
+    OnNewRecord = ClientDataSet2NewRecord
+    Left = 152
+    Top = 216
+    object ClientDataSet2idServicosMatriculas: TIntegerField
+      FieldName = 'idServicosMatriculas'
+      Required = True
+    end
+    object ClientDataSet2Matriculas_idMatricula: TIntegerField
+      FieldName = 'Matriculas_idMatricula'
+      Required = True
+    end
+    object ClientDataSet2Servicos_idServicos: TIntegerField
+      FieldName = 'Servicos_idServicos'
+      Required = True
+    end
+    object ClientDataSet2nomeServico: TStringField
+      FieldKind = fkLookup
+      FieldName = 'nomeServico'
+      LookupDataSet = ClientDataSetServicos
+      LookupKeyFields = 'idServico'
+      LookupResultField = 'nomeServico'
+      KeyFields = 'Servicos_idServicos'
+      Size = 45
+      Lookup = True
+    end
+    object ClientDataSet2precoServico: TFMTBCDField
+      FieldName = 'precoServico'
+      Required = True
+      Precision = 12
+      Size = 2
+    end
+  end
+  object SQLQuery2: TSQLQuery
+    DataSource = DataSource1
+    MaxBlobSize = -1
+    Params = <
+      item
+        DataType = ftInteger
+        Name = 'idMatricula'
+        ParamType = ptInput
+      end>
+    SQL.Strings = (
+      'SELECT * FROM servicosmatriculas'
+      'where matriculas_idmatricula = :idMatricula')
+    SQLConnection = dtmConexao.SQLConnection1
+    Left = 152
+    Top = 152
+    object SQLQuery2idServicosMatriculas: TIntegerField
+      FieldName = 'idServicosMatriculas'
+      Required = True
+    end
+    object SQLQuery2Matriculas_idMatricula: TIntegerField
+      FieldName = 'Matriculas_idMatricula'
+      Required = True
+    end
+    object SQLQuery2Servicos_idServicos: TIntegerField
+      FieldName = 'Servicos_idServicos'
+      Required = True
+    end
+    object SQLQuery2precoServico: TFMTBCDField
+      FieldName = 'precoServico'
+      Required = True
+      Precision = 12
+      Size = 2
+    end
+  end
+  object sqlNovaChave: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = dtmConexao.SQLConnection1
+    Left = 152
+    Top = 64
+  end
+  object SQLQueryClientes: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      'select idclientes, nomecliente from clientes')
+    SQLConnection = dtmConexao.SQLConnection1
+    Left = 344
+    Top = 176
+    object SQLQueryClientesidclientes: TIntegerField
+      FieldName = 'idclientes'
+      Required = True
+    end
+    object SQLQueryClientesnomecliente: TStringField
+      FieldName = 'nomecliente'
+      Required = True
+      Size = 150
+    end
+  end
+  object DataSetProviderClientes: TDataSetProvider
+    DataSet = SQLQueryClientes
+    Left = 344
+    Top = 240
+  end
+  object ClientDataSetClientes: TClientDataSet
+    Active = True
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DataSetProviderClientes'
+    Left = 344
+    Top = 320
+    object ClientDataSetClientesidclientes: TIntegerField
+      FieldName = 'idclientes'
+      Required = True
+    end
+    object ClientDataSetClientesnomecliente: TStringField
+      FieldName = 'nomecliente'
+      Required = True
+      Size = 150
+    end
+  end
+  object SQLQueryServicos: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      'select * from servicos')
+    SQLConnection = dtmConexao.SQLConnection1
+    Left = 464
+    Top = 176
+    object SQLQueryServicosidServico: TIntegerField
+      FieldName = 'idServico'
+      Required = True
+    end
+    object SQLQueryServicosnomeServico: TStringField
+      FieldName = 'nomeServico'
+      Required = True
+      Size = 45
+    end
+    object SQLQueryServicosprecoServico: TFMTBCDField
+      FieldName = 'precoServico'
+      Required = True
+      Precision = 12
+      Size = 2
+    end
+  end
+  object ClientDataSetServicos: TClientDataSet
+    Active = True
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DataSetProviderServicos'
+    Left = 472
+    Top = 320
+    object ClientDataSetServicosidServico: TIntegerField
+      FieldName = 'idServico'
+      Required = True
+    end
+    object ClientDataSetServicosnomeServico: TStringField
+      FieldName = 'nomeServico'
+      Required = True
+      Size = 45
+    end
+    object ClientDataSetServicosprecoServico: TFMTBCDField
+      FieldName = 'precoServico'
+      Required = True
+      Precision = 12
+      Size = 2
+    end
+  end
+  object DataSetProviderServicos: TDataSetProvider
+    DataSet = SQLQueryServicos
+    Left = 472
+    Top = 240
+  end
+  object SQLQuery3: TSQLQuery
+    MaxBlobSize = -1
+    Params = <
+      item
+        DataType = ftInteger
+        Name = 'idServico'
+        ParamType = ptInput
+      end>
+    SQL.Strings = (
+      
+        'SELECT servicos.precoServico from servicos WHERE servicos.idServ' +
+        'ico = :idServico')
+    SQLConnection = dtmConexao.SQLConnection1
+    Left = 496
+    Top = 32
+    object SQLQuery3precoServico: TFMTBCDField
+      FieldName = 'precoServico'
+      Required = True
+      Precision = 12
+      Size = 2
+    end
+  end
+  object SQLQueryProfessor: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      'select idProfessor ,nomeProfessor from professores')
+    SQLConnection = dtmConexao.SQLConnection1
+    Left = 152
+    Top = 400
+    object SQLQueryProfessoridProfessor: TIntegerField
+      FieldName = 'idProfessor'
+      Required = True
+    end
+    object SQLQueryProfessornomeProfessor: TStringField
+      FieldName = 'nomeProfessor'
+      Required = True
+      Size = 150
+    end
+  end
+  object DataSetProviderProfessor: TDataSetProvider
+    DataSet = SQLQueryProfessor
+    Left = 152
+    Top = 464
+  end
+  object ClientDataSetProfessor: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DataSetProviderProfessor'
+    Left = 152
+    Top = 520
+    object ClientDataSetProfessoridProfessor: TIntegerField
+      FieldName = 'idProfessor'
+      Required = True
+    end
+    object ClientDataSetProfessornomeProfessor: TStringField
+      FieldName = 'nomeProfessor'
+      Required = True
+      Size = 150
+    end
+  end
+end

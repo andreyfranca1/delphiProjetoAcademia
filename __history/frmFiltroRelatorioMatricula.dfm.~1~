@@ -1,0 +1,6 @@
+inherited formFiltroRelatorioMatricula: TformFiltroRelatorioMatricula
+  Caption = 'Filtro de Relat'#243'rio de Matr'#237'culas'
+  ExplicitWidth = 463
+  PixelsPerInch = 96
+  TextHeight = 13
+end

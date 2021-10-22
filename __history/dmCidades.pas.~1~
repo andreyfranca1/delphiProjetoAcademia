@@ -1,0 +1,26 @@
+unit dmCidades;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, dmCadastro, Data.FMTBcd, Datasnap.DBClient,
+  Datasnap.Provider, Data.DB, Data.SqlExpr;
+
+type
+  TdtmCidades = class(TdtmCadastro)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dtmCidades: TdtmCidades;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

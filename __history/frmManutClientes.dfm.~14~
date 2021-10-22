@@ -1,0 +1,192 @@
+inherited formManutClientes: TformManutClientes
+  Caption = 'Manuten'#231#227'o de Cadastro de Clientes'
+  ClientHeight = 388
+  ExplicitWidth = 564
+  ExplicitHeight = 427
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel [0]
+    Left = 24
+    Top = 21
+    Width = 31
+    Height = 13
+    Caption = 'Nome:'
+  end
+  object Label2: TLabel [1]
+    Left = 24
+    Top = 202
+    Width = 45
+    Height = 13
+    Caption = 'Endere'#231'o'
+  end
+  object Label3: TLabel [2]
+    Left = 408
+    Top = 21
+    Width = 100
+    Height = 13
+    Caption = 'Data de Nasicmento:'
+  end
+  object Label5: TLabel [3]
+    Left = 24
+    Top = 77
+    Width = 23
+    Height = 13
+    Caption = 'CPF:'
+  end
+  object Label6: TLabel [4]
+    Left = 303
+    Top = 77
+    Width = 56
+    Height = 13
+    Caption = 'Identidade:'
+  end
+  object Label7: TLabel [5]
+    Left = 24
+    Top = 136
+    Width = 27
+    Height = 13
+    Caption = 'Peso:'
+  end
+  object Label8: TLabel [6]
+    Left = 134
+    Top = 136
+    Width = 33
+    Height = 13
+    Caption = 'Altura:'
+  end
+  object Label9: TLabel [7]
+    Left = 357
+    Top = 267
+    Width = 23
+    Height = 13
+    Caption = 'CEP:'
+  end
+  object Label10: TLabel [8]
+    Left = 416
+    Top = 202
+    Width = 32
+    Height = 13
+    Caption = 'Bairro:'
+  end
+  object Label11: TLabel [9]
+    Left = 24
+    Top = 264
+    Width = 33
+    Height = 13
+    Caption = 'Cidade'
+  end
+  inherited btnInserir: TButton
+    Top = 348
+    ExplicitTop = 348
+  end
+  inherited btnCancelar: TButton
+    Top = 348
+    ExplicitTop = 348
+  end
+  object DBEditNome: TDBEdit
+    Left = 24
+    Top = 40
+    Width = 361
+    Height = 21
+    DataField = 'NomeCliente'
+    DataSource = formClientes.DataSource1
+    TabOrder = 2
+  end
+  object DBEditEndereco: TDBEdit
+    Left = 24
+    Top = 221
+    Width = 361
+    Height = 21
+    DataField = 'enderecoCliente'
+    DataSource = formClientes.DataSource1
+    TabOrder = 3
+  end
+  object DBEditDataNascimento: TDBEdit
+    Left = 408
+    Top = 40
+    Width = 132
+    Height = 21
+    DataField = 'dataNascimento'
+    DataSource = formClientes.DataSource1
+    TabOrder = 4
+  end
+  object DBEditCPF: TDBEdit
+    Left = 24
+    Top = 96
+    Width = 249
+    Height = 21
+    DataField = 'cpfCliente'
+    DataSource = formClientes.DataSource1
+    TabOrder = 5
+  end
+  object DBEditIdentidade: TDBEdit
+    Left = 303
+    Top = 96
+    Width = 237
+    Height = 21
+    DataField = 'rgCliente'
+    DataSource = formClientes.DataSource1
+    TabOrder = 6
+  end
+  object DBEditPeso: TDBEdit
+    Left = 24
+    Top = 160
+    Width = 73
+    Height = 21
+    DataField = 'pesoCliente'
+    DataSource = formClientes.DataSource1
+    TabOrder = 7
+  end
+  object DBEditAltura: TDBEdit
+    Left = 134
+    Top = 160
+    Width = 75
+    Height = 21
+    DataField = 'alturaCliente'
+    DataSource = formClientes.DataSource1
+    TabOrder = 8
+  end
+  object DBEditCEP: TDBEdit
+    Left = 357
+    Top = 291
+    Width = 121
+    Height = 21
+    DataField = 'cepCliente'
+    DataSource = formClientes.DataSource1
+    TabOrder = 9
+  end
+  object DBEditBairro: TDBEdit
+    Left = 408
+    Top = 221
+    Width = 132
+    Height = 21
+    DataField = 'bairroCliente'
+    DataSource = formClientes.DataSource1
+    TabOrder = 10
+  end
+  object DBLookupComboBoxCidade: TDBLookupComboBox
+    Left = 24
+    Top = 291
+    Width = 225
+    Height = 21
+    DataField = 'nomeCidade'
+    DataSource = formClientes.DataSource1
+    TabOrder = 11
+  end
+  object DBRadioGroup1: TDBRadioGroup
+    Left = 458
+    Top = 143
+    Width = 82
+    Height = 53
+    Caption = 'Sexo'
+    DataField = 'sexoCliente'
+    DataSource = formClientes.DataSource1
+    Items.Strings = (
+      'Masculino'
+      'Feminino')
+    TabOrder = 12
+    Values.Strings = (
+      'M'
+      'F')
+  end
+end

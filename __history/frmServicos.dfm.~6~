@@ -1,0 +1,75 @@
+inherited formServicos: TformServicos
+  Caption = 'Cadastro de Servi'#231'os'
+  ClientHeight = 583
+  ClientWidth = 1132
+  OnCreate = FormCreate
+  ExplicitLeft = -309
+  ExplicitTop = -58
+  ExplicitWidth = 1148
+  ExplicitHeight = 622
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Image1: TImage
+    Width = 1132
+    Height = 583
+    ExplicitWidth = 820
+    ExplicitHeight = 430
+  end
+  inherited DBNavigator1: TDBNavigator
+    Hints.Strings = ()
+  end
+  inherited Panel4: TPanel
+    Left = 44
+    Top = 530
+    ExplicitLeft = -268
+    ExplicitTop = 377
+  end
+  inherited btnPrimeiro: TButton
+    Left = 44
+    Top = 553
+    ExplicitLeft = -268
+    ExplicitTop = 400
+  end
+  inherited btnAnterior: TButton
+    Left = 125
+    Top = 553
+    ExplicitLeft = -187
+    ExplicitTop = 400
+  end
+  inherited btnProximo: TButton
+    Left = 214
+    Top = 553
+    ExplicitLeft = -98
+    ExplicitTop = 400
+  end
+  inherited btnUltimo: TButton
+    Left = 308
+    Top = 553
+    ExplicitLeft = -4
+    ExplicitTop = 400
+  end
+  inherited DBGrid1: TDBGrid
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'idServico'
+        Title.Caption = 'Codigo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nomeServico'
+        Title.Caption = 'Nome do Servi'#231'o'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'precoServico'
+        Title.Caption = 'Pre'#231'o'
+        Visible = True
+      end>
+  end
+  inherited DataSource1: TDataSource
+    DataSet = dtmServicos.ClientDataSet1
+  end
+end

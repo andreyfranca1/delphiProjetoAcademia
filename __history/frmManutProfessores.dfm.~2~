@@ -1,0 +1,126 @@
+inherited formManutProfessores: TformManutProfessores
+  Caption = 'Manuten'#231#227'o de Cadastro de Professores'
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel [0]
+    Left = 24
+    Top = 13
+    Width = 31
+    Height = 13
+    Caption = 'Nome:'
+  end
+  object Label2: TLabel [1]
+    Left = 24
+    Top = 69
+    Width = 45
+    Height = 13
+    Caption = 'Endere'#231'o'
+  end
+  object Label3: TLabel [2]
+    Left = 280
+    Top = 13
+    Width = 169
+    Height = 13
+    Caption = 'Data de Nasicmento (YYYY/MM/DD)'
+  end
+  object Label4: TLabel [3]
+    Left = 200
+    Top = 13
+    Width = 24
+    Height = 13
+    Caption = 'Sexo'
+  end
+  object Label5: TLabel [4]
+    Left = 24
+    Top = 136
+    Width = 23
+    Height = 13
+    Caption = 'CPF:'
+  end
+  object Label6: TLabel [5]
+    Left = 224
+    Top = 136
+    Width = 56
+    Height = 13
+    Caption = 'Identidade:'
+  end
+  object Label7: TLabel [6]
+    Left = 24
+    Top = 208
+    Width = 56
+    Height = 13
+    Caption = 'Identidade:'
+  end
+  object Label8: TLabel [7]
+    Left = 224
+    Top = 208
+    Width = 56
+    Height = 13
+    Caption = 'Identidade:'
+  end
+  object DBEditNome: TDBEdit
+    Left = 24
+    Top = 32
+    Width = 121
+    Height = 21
+    DataField = 'nomeProfessor'
+    DataSource = formProfessor.DataSource1
+    TabOrder = 2
+  end
+  object DBEditSexo: TDBEdit
+    Left = 200
+    Top = 32
+    Width = 31
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'sexoProfessor'
+    DataSource = formProfessor.DataSource1
+    TabOrder = 3
+  end
+  object DBEditEndereco: TDBEdit
+    Left = 24
+    Top = 88
+    Width = 516
+    Height = 21
+    DataField = 'enderecoProfessor'
+    DataSource = formProfessor.DataSource1
+    TabOrder = 4
+  end
+  object DBEditDataNascimento: TDBEdit
+    Left = 280
+    Top = 32
+    Width = 121
+    Height = 21
+    DataField = 'dataNascimento'
+    DataSource = formProfessor.DataSource1
+    TabOrder = 5
+  end
+  object DBEditCPF: TDBEdit
+    Left = 24
+    Top = 155
+    Width = 121
+    Height = 21
+    TabOrder = 6
+  end
+  object DBEditIdentidade: TDBEdit
+    Left = 224
+    Top = 155
+    Width = 121
+    Height = 21
+    TabOrder = 7
+  end
+  object DBEdit2: TDBEdit
+    Left = 24
+    Top = 227
+    Width = 121
+    Height = 21
+    TabOrder = 8
+  end
+  object DBEdit3: TDBEdit
+    Left = 224
+    Top = 227
+    Width = 121
+    Height = 21
+    TabOrder = 9
+  end
+end

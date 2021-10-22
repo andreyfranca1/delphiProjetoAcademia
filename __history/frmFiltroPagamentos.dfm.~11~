@@ -1,0 +1,64 @@
+inherited formFiltroPagamentos: TformFiltroPagamentos
+  Caption = 'formFiltroPagamentos'
+  ClientHeight = 285
+  ClientWidth = 264
+  ExplicitWidth = 280
+  ExplicitHeight = 324
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel [0]
+    Left = 24
+    Top = 101
+    Width = 96
+    Height = 13
+    Caption = 'Data do Vencimento'
+  end
+  object Label2: TLabel [1]
+    Left = 24
+    Top = 157
+    Width = 95
+    Height = 13
+    Caption = 'Data do Pagamento'
+  end
+  inherited btnFiltrar: TButton
+    Left = 77
+    Top = 252
+    ExplicitLeft = 123
+    ExplicitTop = 230
+  end
+  inherited btnCancelar: TButton
+    Left = 181
+    Top = 252
+    ExplicitLeft = 227
+    ExplicitTop = 230
+  end
+  object EditDataPagamento: TEdit
+    Left = 24
+    Top = 176
+    Width = 186
+    Height = 21
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 2
+    TextHint = '__/__/____'
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 24
+    Top = 64
+    Width = 186
+    Height = 21
+    DataField = 'nomeCliente'
+    DataSource = formPagamentos.DataSource1
+    TabOrder = 3
+  end
+  object EditDataVencimento: TEdit
+    Left = 24
+    Top = 120
+    Width = 186
+    Height = 21
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 4
+    TextHint = '__/__/____'
+  end
+end

@@ -1,0 +1,24 @@
+unit frmFiltroRelatorioServico;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, frmFiltroRelatorio, Vcl.StdCtrls;
+
+type
+  TformFiltroRelatorioServico = class(TformFiltroRelatorio)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  formFiltroRelatorioServico: TformFiltroRelatorioServico;
+
+implementation
+
+{$R *.dfm}
+
+end.

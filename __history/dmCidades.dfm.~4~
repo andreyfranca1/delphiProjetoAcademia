@@ -1,0 +1,86 @@
+inherited dtmCidades: TdtmCidades
+  Width = 262
+  inherited SQLQuery1: TSQLQuery
+    SQL.Strings = (
+      'select * from cidades')
+    object SQLQuery1idCidade: TIntegerField
+      FieldName = 'idCidade'
+      Required = True
+    end
+    object SQLQuery1nomeCidade: TStringField
+      FieldName = 'nomeCidade'
+      Required = True
+      Size = 50
+    end
+    object SQLQuery1idEstado: TIntegerField
+      FieldName = 'idEstado'
+      Required = True
+    end
+    object SQLQuery1nomeEstado: TStringField
+      FieldName = 'nomeEstado'
+    end
+  end
+  inherited ClientDataSet1: TClientDataSet
+    object ClientDataSet1idCidade: TIntegerField
+      FieldName = 'idCidade'
+      Required = True
+    end
+    object ClientDataSet1nomeCidade: TStringField
+      FieldName = 'nomeCidade'
+      Required = True
+      Size = 50
+    end
+    object ClientDataSet1idEstado: TIntegerField
+      FieldName = 'idEstado'
+      Required = True
+    end
+    object ClientDataSet1nomeEstado: TStringField
+      FieldKind = fkLookup
+      FieldName = 'nomeEstado'
+      LookupDataSet = qryCidades
+      LookupKeyFields = 'idEstado'
+      LookupResultField = 'siglaEstado'
+      KeyFields = 'idEstado'
+      Lookup = True
+    end
+  end
+  object qryCidades: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      'SELECT * FROM `estados`')
+    SQLConnection = dtmConexao.SQLConnection1
+    Left = 128
+    Top = 32
+    object qryCidadesidEstado: TIntegerField
+      FieldName = 'idEstado'
+      Required = True
+    end
+    object qryCidadessiglaEstado: TStringField
+      FieldName = 'siglaEstado'
+      Required = True
+      Size = 2
+    end
+  end
+  object dspCidades: TDataSetProvider
+    DataSet = qryCidades
+    Left = 128
+    Top = 80
+  end
+  object cdsCidades: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'dspCidades'
+    Left = 128
+    Top = 128
+    object cdsCidadesidEstado: TIntegerField
+      FieldName = 'idEstado'
+      Required = True
+    end
+    object cdsCidadessiglaEstado: TStringField
+      FieldName = 'siglaEstado'
+      Required = True
+      Size = 2
+    end
+  end
+end

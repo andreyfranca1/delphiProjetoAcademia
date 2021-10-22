@@ -1,0 +1,113 @@
+unit dmMatricula;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Data.DBXMySQL, Data.FMTBcd, Data.DB,
+  Datasnap.DBClient, Datasnap.Provider, Data.DBXCommon, Data.SqlExpr, dmCadastro;
+
+type
+  TdtmMatricula = class(TdtmCadastro)
+    SQLQuery1idCliente: TIntegerField;
+    ClientDataSet1idMatricula: TIntegerField;
+    ClientDataSet1dataMatricula: TDateField;
+    ClientDataSet1dataVencimento: TDateField;
+    ClientDataSet1idCliente: TIntegerField;
+    DataSource1: TDataSource;
+    ClientDataSet2: TClientDataSet;
+    SQLQuery2: TSQLQuery;
+    sqlNovaChave: TSQLQuery;
+    ClientDataSet1SQLQuery2: TDataSetField;
+    SQLQuery2idServicosMatriculas: TIntegerField;
+    SQLQuery2Matriculas_idMatricula: TIntegerField;
+    SQLQuery2Servicos_idServicos: TIntegerField;
+    SQLQuery1idMatricula: TIntegerField;
+    SQLQuery1dataMatricula: TDateField;
+    SQLQuery1dataVencimento: TDateField;
+    SQLQuery1valorMatricula: TFMTBCDField;
+    ClientDataSet1valorMatricula: TFMTBCDField;
+    SQLQueryClientes: TSQLQuery;
+    SQLQueryClientesidclientes: TIntegerField;
+    SQLQueryClientesnomecliente: TStringField;
+    DataSetProviderClientes: TDataSetProvider;
+    ClientDataSetClientes: TClientDataSet;
+    ClientDataSetClientesidclientes: TIntegerField;
+    ClientDataSetClientesnomecliente: TStringField;
+    ClientDataSet1nomeCliente: TStringField;
+    SQLQueryServicos: TSQLQuery;
+    SQLQueryServicosidServico: TIntegerField;
+    SQLQueryServicosnomeServico: TStringField;
+    SQLQueryServicosprecoServico: TFMTBCDField;
+    ClientDataSetServicos: TClientDataSet;
+    DataSetProviderServicos: TDataSetProvider;
+    ClientDataSetServicosidServico: TIntegerField;
+    ClientDataSetServicosnomeServico: TStringField;
+    ClientDataSetServicosprecoServico: TFMTBCDField;
+    ClientDataSet2idServicosMatriculas: TIntegerField;
+    ClientDataSet2Matriculas_idMatricula: TIntegerField;
+    ClientDataSet2Servicos_idServicos: TIntegerField;
+    ClientDataSet2nomeServico: TStringField;
+    SQLQuery2precoServico: TFMTBCDField;
+    ClientDataSet2precoServico: TFMTBCDField;
+    SQLQuery3: TSQLQuery;
+    SQLQuery3precoServico: TFMTBCDField;
+    procedure ClientDataSet1NewRecord(DataSet: TDataSet);
+  private
+    { Private declarations }
+    function getNovaChave(Chave: string): integer;
+  public
+    { Public declarations }
+  end;
+
+var
+  dtmMatricula: TdtmMatricula;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+uses dmConexao;
+
+{$R *.dfm}
+
+procedure TdtmMatricula.ClientDataSet1NewRecord(DataSet: TDataSet);
+begin
+  ClientDataSet1idMatricula.Value := getNovaChave('MATRICULAS');
+end;
+function TdtmMatricula.getNovaChave(Chave: string): integer;
+var
+  transacao: TDBXTransaction;
+begin
+  transacao := dtmConexao.SQLConnection1.BeginTransaction;
+  try
+    sqlNovaChave.Close;
+    sqlNovaChave.SQL.Clear;
+    sqlNovaChave.SQL.Add('update sequencias');
+    sqlNovaChave.SQL.Add('set valor = valor + 1');
+    sqlNovaChave.SQL.Add('where chave = ' + QuotedStr(Chave));
+    sqlNovaChave.ExecSQL;
+
+    sqlNovaChave.Close;
+    sqlNovaChave.SQL.Clear;
+    sqlNovaChave.SQL.Add('select valor from sequencias ') ;
+    sqlNovaChave.SQL.Add(' where chave = '+ QuotedStr(Chave));
+    sqlNovaChave.Open;
+
+    if sqlNovaChave.IsEmpty then
+    begin
+      sqlNovaChave.Close;
+      sqlNovaChave.SQL.Clear;
+      sqlNovaChave.SQL.Add('insert into sequencias ');
+      sqlNovaChave.SQL.Add('values(' + QuotedStr(Chave) + ', 1)');
+      sqlNovaChave.Open;
+      result := 1;
+    end
+    else
+      result := sqlNovaChave.Fields[0].AsInteger;
+
+  finally
+    dtmConexao.SQLConnection1.CommitFreeAndNil(transacao);
+  end;
+end;
+
+end.

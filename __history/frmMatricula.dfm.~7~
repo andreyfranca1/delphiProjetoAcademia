@@ -1,0 +1,76 @@
+inherited formMatricula: TformMatricula
+  Caption = 'formMatricula'
+  ClientHeight = 616
+  ClientWidth = 1098
+  ExplicitWidth = 1114
+  ExplicitHeight = 655
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited DBNavigator1: TDBNavigator
+    Hints.Strings = ()
+  end
+  inherited Panel4: TPanel
+    Left = 10
+    Top = 563
+    ExplicitLeft = -125
+    ExplicitTop = 402
+  end
+  inherited btnPrimeiro: TButton
+    Left = 10
+    Top = 586
+    ExplicitLeft = -125
+    ExplicitTop = 425
+  end
+  inherited btnAnterior: TButton
+    Left = 91
+    Top = 586
+    ExplicitLeft = -44
+    ExplicitTop = 425
+  end
+  inherited btnProximo: TButton
+    Left = 180
+    Top = 586
+    ExplicitLeft = 45
+    ExplicitTop = 425
+  end
+  inherited btnUltimo: TButton
+    Left = 274
+    Top = 586
+    ExplicitLeft = 139
+    ExplicitTop = 425
+  end
+  inherited DBGrid1: TDBGrid
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'idMatricula'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'dataMatricula'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'dataVencimento'
+        Width = 64
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'parcelamentoContrato'
+        Width = 64
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'idCliente'
+        Visible = True
+      end>
+  end
+  inherited DataSource1: TDataSource
+    DataSet = dtmMatricula.ClientDataSet1
+    OnDataChange = DataSource1DataChange
+  end
+end

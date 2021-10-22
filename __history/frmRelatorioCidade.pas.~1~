@@ -1,0 +1,25 @@
+unit frmRelatorioCidade;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, frmRelatorioImpressao, Data.FMTBcd,
+  Data.DB, Data.SqlExpr, QRCtrls, QuickRpt, Vcl.ExtCtrls;
+
+type
+  TformRelatorioCidade = class(TformRelatorioImpressao)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  formRelatorioCidade: TformRelatorioCidade;
+
+implementation
+
+{$R *.dfm}
+
+end.

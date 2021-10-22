@@ -1,0 +1,114 @@
+inherited formClientes: TformClientes
+  ExplicitWidth = 1135
+  ExplicitHeight = 651
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited DBNavigator1: TDBNavigator
+    Hints.Strings = ()
+  end
+  inherited Panel4: TPanel
+    ExplicitLeft = 31
+  end
+  inherited btnPrimeiro: TButton
+    ExplicitLeft = 31
+  end
+  inherited btnAnterior: TButton
+    ExplicitLeft = 112
+  end
+  inherited btnProximo: TButton
+    ExplicitLeft = 201
+  end
+  inherited btnUltimo: TButton
+    ExplicitLeft = 295
+  end
+  inherited DBGrid1: TDBGrid
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'idClientes'
+        Title.Caption = 'Codigo'
+        Width = 41
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NomeCliente'
+        Title.Caption = 'Nome'
+        Width = 221
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cpfCliente'
+        Title.Caption = 'CPF'
+        Width = 82
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'rgCliente'
+        Title.Caption = 'Identidade'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'dataNascimento'
+        Title.Caption = 'Data de Nascimento'
+        Width = 111
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'pesoCliente'
+        Title.Caption = 'Peso(KG)'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'alturaCliente'
+        Title.Caption = 'Altura'
+        Width = 64
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'enderecoCliente'
+        Title.Caption = 'Endere'#231'o'
+        Width = 90
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'bairroCliente'
+        Title.Caption = 'Bairro'
+        Width = 64
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nomeCidade'
+        Title.Caption = 'Nome Cidade'
+        Width = 86
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cepCliente'
+        Title.Caption = 'Cep'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'sexoCliente'
+        Title.Caption = 'Sexo'
+        Width = 64
+        Visible = True
+      end>
+  end
+  inherited DataSource1: TDataSource
+    AutoEdit = False
+    DataSet = dtmClientes.ClientDataSet1
+    OnDataChange = DataSource1DataChange
+  end
+end

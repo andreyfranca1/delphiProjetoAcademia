@@ -1,0 +1,7 @@
+inherited formManutCidades: TformManutCidades
+  Caption = 'formManutCidades'
+  ExplicitWidth = 564
+  ExplicitHeight = 580
+  PixelsPerInch = 96
+  TextHeight = 13
+end

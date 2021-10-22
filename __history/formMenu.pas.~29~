@@ -1,0 +1,177 @@
+unit formMenu;
+
+interface
+
+uses
+   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.Imaging.pngimage,
+  Vcl.ExtCtrls;
+
+type
+ TfrmMenu = class(TForm)
+    MainMenu1: TMainMenu;
+    Cadastro: TMenuItem;
+    Professor: TMenuItem;
+    Servicos: TMenuItem;
+    Cidades: TMenuItem;
+    Clientes: TMenuItem;
+    Fechar: TMenuItem;
+    Matriculas1: TMenuItem;
+    Image1: TImage;
+    Pagamentos1: TMenuItem;
+    Relatorio: TMenuItem;
+    ClientesRelatorio: TMenuItem;
+    ProfessorRelatorio: TMenuItem;
+    CidadeRelatorio: TMenuItem;
+    procedure FecharClick(Sender: TObject);
+    procedure ClientesClick(Sender: TObject);
+    procedure ProfessorClick(Sender: TObject);
+    procedure ServicosClick(Sender: TObject);
+    procedure Matriculas1Click(Sender: TObject);
+    procedure CidadesClick(Sender: TObject);
+    procedure Pagamentos1Click(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmMenu: TfrmMenu;
+
+implementation
+
+{$R *.dfm}
+
+{ TForm1 }
+
+uses dmCadastro, frmCadastro, dmConexao, frmClientes, dmClientes, dmPlanos,
+  dmProfessor, dmServicos, frmPlanos, frmProfessor, frmServicos,
+  frmFiltroClientes, frmFiltroProfessor, frmManutProfessores, frmManutServico,
+  frmManutClientes, frmManutPlanos,frmMatricula, dmMatricula, frmManutMatricula,
+  frmFiltroMatricula, dmCidades, frmCidades, frmManutCidades, frmFiltroServico,
+  dmPagamentos, frmPagamentos, frmManutPagamentos;
+
+procedure TfrmMenu.CidadesClick(Sender: TObject);
+begin
+  dtmCidades := TdtmCidades.Create(self);
+  try
+    dtmCidades.DataModuleConexao := dtmConexao;
+    formCidades := TformCidades.Create(self);
+    try
+      formCidades.DataModuleCadastro := dtmCidades;
+//      formCidades.FormManutCadastro := TformManutCidades.create(self);
+      formCidades.FormManutCadastro := TformManutCidades.create(self);
+      formCidades.ShowModal;
+    finally
+
+    end;
+  finally
+
+  end;
+end;
+
+procedure TfrmMenu.ClientesClick(Sender: TObject);
+begin
+  dtmClientes := TdtmClientes.Create(self);
+  try
+    dtmClientes.DataModuleConexao := dtmConexao;
+    formClientes := TformClientes.Create(self);
+    try
+      formClientes.DataModuleCadastro := dtmClientes;
+      formClientes.FormFiltroCadastro := TFormFiltroClientes.create(self);
+      formClientes.FormManutCadastro := TformManutClientes.create(self);
+      formClientes.ShowModal;
+    finally
+      FreeAndNil(formClientes);
+    end;
+  finally
+    FreeAndNil(dtmClientes);
+  end;
+end;
+
+procedure TfrmMenu.FecharClick(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TfrmMenu.Matriculas1Click(Sender: TObject);
+begin
+ dtmMatricula := TdtmMatricula.Create(self);
+  try
+    dtmMatricula.DataModuleConexao := dtmConexao;
+    formMatricula := TformMatricula.Create(self);
+    try
+      formMatricula.DataModuleCadastro := dtmMatricula;
+      formMatricula.FormFiltroCadastro := TformFiltroMatricula.create(self);
+      formMatricula.FormManutCadastro := TformManutMatricula.create(self);
+      formMatricula.ShowModal;
+    finally
+      FreeAndNil(formMatricula)
+    end;
+  finally
+    FreeAndNil(dtmMatricula)
+  end;
+end;
+
+
+
+
+procedure TfrmMenu.Pagamentos1Click(Sender: TObject);
+begin
+  dtmPagamentos := TdtmPagamentos.Create(self);
+  try
+    dtmPagamentos.DataModuleConexao := dtmConexao;
+    formPagamentos := TformPagamentos.Create(self);
+    try
+      formPagamentos.DataModuleCadastro := dtmPagamentos;
+      formPagamentos.FormManutCadastro := TformManutPagamentos.Create(self);
+      formPagamentos.ShowModal;
+    finally
+      FreeAndNil(formPagamentos);
+    end;
+  finally
+    FreeAndNil(dtmPagamentos);
+  end;
+end;
+
+procedure TfrmMenu.ProfessorClick(Sender: TObject);
+begin
+  dtmProfessor := TdtmProfessor.Create(self);
+  try
+    dtmProfessor.DataModuleConexao := dtmConexao;
+    formProfessor := TformProfessor.Create(self);
+    try
+      formProfessor.DataModuleCadastro := dtmProfessor;
+      formProfessor.FormFiltroCadastro := TformFiltroProfessor.create(self);
+      formProfessor.FormManutCadastro := TformManutProfessores.create(self);
+      formProfessor.ShowModal;
+    finally
+      FreeAndNil(formProfessor);
+    end;
+  finally
+    FreeAndNil(dtmProfessor);
+  end;
+end;
+
+procedure TfrmMenu.ServicosClick(Sender: TObject);
+begin
+  dtmServicos := TdtmServicos.Create(self);
+  try
+    dtmServicos.DataModuleConexao := dtmConexao;
+    formServicos := TformServicos.Create(self);
+    try
+      formServicos.DataModuleCadastro := dtmServicos;
+      formServicos.FormFiltroCadastro := TformFiltroServico.create(self);
+      formServicos.FormManutCadastro :=   TformManutServico.create(self);
+      formServicos.ShowModal;
+    finally
+      FreeAndNil(formServicos);
+    end;
+  finally
+    FreeAndNil(dtmServicos);
+  end;
+end;
+
+end.

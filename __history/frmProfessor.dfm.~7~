@@ -1,0 +1,99 @@
+inherited formProfessor: TformProfessor
+  Caption = 'Cadastro de Professores'
+  ExplicitTop = -209
+  ExplicitWidth = 1135
+  ExplicitHeight = 651
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited DBNavigator1: TDBNavigator
+    Hints.Strings = ()
+  end
+  inherited Panel4: TPanel
+    ExplicitLeft = 31
+  end
+  inherited btnPrimeiro: TButton
+    ExplicitLeft = 31
+  end
+  inherited btnAnterior: TButton
+    ExplicitLeft = 112
+  end
+  inherited btnProximo: TButton
+    ExplicitLeft = 201
+  end
+  inherited btnUltimo: TButton
+    ExplicitLeft = 295
+  end
+  inherited DBGrid1: TDBGrid
+    Left = 0
+    Top = 84
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'idProfessor'
+        Title.Caption = 'Codigo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nomeProfessor'
+        Title.Caption = 'Nome'
+        Width = 186
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cpfProfessor'
+        Title.Caption = 'CPF'
+        Width = 161
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'rgProfessor'
+        Title.Caption = 'Identidade'
+        Width = 163
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'sexoProfessor'
+        Title.Caption = 'Sexo'
+        Width = 68
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'dataNascimento'
+        Title.Caption = 'Data de Nascimento'
+        Width = 122
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'enderecoProfessor'
+        Title.Caption = 'Endere'#231'o'
+        Width = 181
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CidadeProfessor'
+        Title.Caption = 'Cidade'
+        Width = 107
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'EstadoProfessor'
+        Title.Caption = 'Estado'
+        Visible = True
+      end>
+  end
+  inherited btnPesquisar: TButton
+    Left = 851
+    ExplicitLeft = 851
+  end
+  inherited DataSource1: TDataSource
+    DataSet = dtmProfessor.ClientDataSet1
+  end
+end

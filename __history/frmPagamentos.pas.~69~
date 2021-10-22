@@ -1,0 +1,37 @@
+unit frmPagamentos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, frmCadastro, Data.DB, Vcl.Grids,
+  Vcl.DBGrids, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Imaging.jpeg;
+
+type
+  TformPagamentos = class(TformCadastro)
+    btnGerarCobranca: TButton;
+    procedure btnGerarCobrancaClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  formPagamentos: TformPagamentos;
+
+
+implementation
+
+{$R *.dfm}
+
+uses dmPagamentos, dmConexao, frmConfirmaCobranca;
+
+procedure TformPagamentos.btnGerarCobrancaClick(Sender: TObject);
+begin
+  inherited;
+  frmConfirmaCobranca := TformConfirmaCobranca.Create(self);
+  frmConfirmaCobranca.formConfirmaCobranca.ShowModal
+end;
+
+end.

@@ -1,0 +1,50 @@
+object formConfirmaCobranca: TformConfirmaCobranca
+  Left = 0
+  Top = 0
+  Caption = 'Data de Cobran'#231'a'
+  ClientHeight = 165
+  ClientWidth = 258
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object LabelDataCobranca: TLabel
+    Left = 8
+    Top = 24
+    Width = 87
+    Height = 13
+    Caption = 'Data da Cobran'#231'a'
+  end
+  object DateTimePicker1: TDateTimePicker
+    Left = 8
+    Top = 48
+    Width = 105
+    Height = 21
+    Date = 44160.846233761570000000
+    Time = 44160.846233761570000000
+    TabOrder = 0
+  end
+  object btnGerar: TButton
+    Left = 94
+    Top = 132
+    Width = 75
+    Height = 25
+    Caption = 'Gerar'
+    TabOrder = 1
+    OnClick = btnGerarClick
+  end
+  object btnCancelar: TButton
+    Left = 175
+    Top = 132
+    Width = 75
+    Height = 25
+    Caption = 'Cancelar'
+    TabOrder = 2
+    OnClick = btnCancelarClick
+  end
+end

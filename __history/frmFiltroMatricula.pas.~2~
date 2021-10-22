@@ -1,0 +1,40 @@
+unit frmFiltroMatricula;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, frmFiltroCadastro, Vcl.StdCtrls,
+  Vcl.ExtCtrls;
+
+type
+  TformFiltroMatricula = class(TformFiltroCadastro)
+    edNome: TLabeledEdit;
+    procedure btnFiltrarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  formFiltroMatricula: TformFiltroMatricula;
+
+implementation
+
+{$R *.dfm}
+
+procedure TformFiltroMatricula.btnFiltrarClick(Sender: TObject);
+begin
+  inherited;
+  sqlFiltro := 'where 1=1' ;
+
+  if trim(edNome.Text) <> '' then
+  begin
+     sqlFiltro := sqlFiltro + ' and UPPER(nomeProfessor) like UPPER(' + QuotedStr(edNome.Text + '%') + ')';
+  end;
+  sqlFiltro := sqlFiltro + ' order by nomeProfessor';
+  inherited;
+end;
+
+end.

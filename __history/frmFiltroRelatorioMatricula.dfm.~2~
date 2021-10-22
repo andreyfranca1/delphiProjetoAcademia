@@ -1,0 +1,31 @@
+inherited formFiltroRelatorioMatricula: TformFiltroRelatorioMatricula
+  Caption = 'Filtro de Relat'#243'rio de Matr'#237'culas'
+  ClientHeight = 98
+  ClientWidth = 293
+  ExplicitWidth = 309
+  ExplicitHeight = 137
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited btnImprimir: TButton
+    Left = 117
+    Top = 64
+    ExplicitLeft = 117
+    ExplicitTop = 64
+  end
+  inherited btnCancelar: TButton
+    Left = 198
+    Top = 64
+    ExplicitLeft = 198
+    ExplicitTop = 64
+  end
+  object edNome: TLabeledEdit
+    Left = 8
+    Top = 24
+    Width = 273
+    Height = 21
+    EditLabel.Width = 82
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Nome do Cliente:'
+    TabOrder = 2
+  end
+end

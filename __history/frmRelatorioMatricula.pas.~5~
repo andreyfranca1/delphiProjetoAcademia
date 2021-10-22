@@ -1,0 +1,64 @@
+unit frmRelatorioMatricula;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, frmRelatorioImpressao, Data.FMTBcd,
+  QRCtrls, QuickRpt, Data.DB, Datasnap.DBClient, Datasnap.Provider,
+  Data.SqlExpr, Vcl.ExtCtrls;
+
+type
+  TformRelatorioMatricula = class(TformRelatorioImpressao)
+    DataSetProvider1: TDataSetProvider;
+    ClientDataSet1: TClientDataSet;
+    DataSource1: TDataSource;
+    ClientDataSet2: TClientDataSet;
+    SQLQuery2: TSQLQuery;
+    QRSubDetail1: TQRSubDetail;
+    QRDBText1: TQRDBText;
+    QRDBText2: TQRDBText;
+    QRDBText3: TQRDBText;
+    QRDBText4: TQRDBText;
+    QRDBText5: TQRDBText;
+    SQLQuery2idServicosMatriculas: TIntegerField;
+    SQLQuery2Matriculas_idMatricula: TIntegerField;
+    SQLQuery2Servicos_idServicos: TIntegerField;
+    SQLQuery2precoServico: TFMTBCDField;
+    SQLQuery2idServico: TIntegerField;
+    SQLQuery2nomeServico: TStringField;
+    SQLQuery2precoServico_1: TFMTBCDField;
+    ClientDataSet2idServicosMatriculas: TIntegerField;
+    ClientDataSet2Matriculas_idMatricula: TIntegerField;
+    ClientDataSet2Servicos_idServicos: TIntegerField;
+    ClientDataSet2precoServico: TFMTBCDField;
+    ClientDataSet2idServico: TIntegerField;
+    ClientDataSet2nomeServico: TStringField;
+    ClientDataSet2precoServico_1: TFMTBCDField;
+    SQLQuery1idMatricula: TIntegerField;
+    SQLQuery1dataMatricula: TDateField;
+    SQLQuery1valorMatricula: TFMTBCDField;
+    SQLQuery1NomeCliente: TStringField;
+    SQLQuery1nomeProfessor: TStringField;
+    ClientDataSet1idMatricula: TIntegerField;
+    ClientDataSet1dataMatricula: TDateField;
+    ClientDataSet1valorMatricula: TFMTBCDField;
+    ClientDataSet1NomeCliente: TStringField;
+    ClientDataSet1nomeProfessor: TStringField;
+    ClientDataSet1SQLQuery2: TDataSetField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  formRelatorioMatricula: TformRelatorioMatricula;
+
+implementation
+
+{$R *.dfm}
+
+uses dmConexao;
+
+end.

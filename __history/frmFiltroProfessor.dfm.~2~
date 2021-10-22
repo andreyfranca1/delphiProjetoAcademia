@@ -1,0 +1,59 @@
+inherited formFiltroProfessor: TformFiltroProfessor
+  Caption = 'Filtro de Professores'
+  ClientHeight = 242
+  ClientWidth = 304
+  ExplicitWidth = 320
+  ExplicitHeight = 281
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited btnFiltrar: TButton
+    Left = 117
+    Top = 209
+  end
+  inherited btnCancelar: TButton
+    Left = 221
+    Top = 209
+  end
+  object edNome: TLabeledEdit
+    Left = 16
+    Top = 32
+    Width = 169
+    Height = 21
+    EditLabel.Width = 31
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Nome:'
+    TabOrder = 2
+  end
+  object edSexo: TLabeledEdit
+    Left = 216
+    Top = 32
+    Width = 41
+    Height = 21
+    CharCase = ecUpperCase
+    EditLabel.Width = 24
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Sexo'
+    MaxLength = 1
+    TabOrder = 3
+  end
+  object edCPF: TLabeledEdit
+    Left = 16
+    Top = 96
+    Width = 169
+    Height = 21
+    EditLabel.Width = 23
+    EditLabel.Height = 13
+    EditLabel.Caption = 'CPF:'
+    TabOrder = 4
+  end
+  object edIdentidade: TLabeledEdit
+    Left = 16
+    Top = 160
+    Width = 169
+    Height = 21
+    EditLabel.Width = 56
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Identidade:'
+    TabOrder = 5
+  end
+end

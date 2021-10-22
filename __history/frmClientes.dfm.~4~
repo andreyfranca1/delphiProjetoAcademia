@@ -1,0 +1,81 @@
+inherited formClientes: TformClientes
+  Caption = 'formClientes'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited DBNavigator1: TDBNavigator
+    Hints.Strings = ()
+  end
+  inherited DBGrid1: TDBGrid
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'idClientes'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NomeCliente'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'dataNascimento'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'enderecoCliente'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cpfCliente'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'rgCliente'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'pesoCliente'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'alturaCliente'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Cidades_idCidade'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cepCliente'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'bairroCliente'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nomeCidade'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'sexoCliente'
+        Visible = True
+      end>
+  end
+  inherited DataSource1: TDataSource
+    AutoEdit = False
+    DataSet = dtmClientes.ClientDataSet1
+    OnDataChange = DataSource1DataChange
+  end
+end

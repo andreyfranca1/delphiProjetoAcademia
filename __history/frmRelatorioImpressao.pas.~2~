@@ -1,0 +1,38 @@
+unit frmRelatorioImpressao;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, QuickRpt, QRCtrls, Vcl.StdCtrls,
+  Vcl.ExtCtrls, Data.FMTBcd, Data.DB, Data.SqlExpr;
+
+type
+  TformRelatorioImpressao = class(TForm)
+    QuickRep1: TQuickRep;
+    PageHeaderBand1: TQRBand;
+    TitleBand1: TQRBand;
+    ColumnHeaderBand1: TQRBand;
+    DetailBand1: TQRBand;
+    PageFooterBand1: TQRBand;
+    QRLabel1: TQRLabel;
+    QRSysData1: TQRSysData;
+    QRLabel2: TQRLabel;
+    SQLQuery1: TSQLQuery;
+    QRSysData3: TQRSysData;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  formRelatorioImpressao: TformRelatorioImpressao;
+
+implementation
+
+{$R *.dfm}
+
+uses dmConexao;
+
+end.

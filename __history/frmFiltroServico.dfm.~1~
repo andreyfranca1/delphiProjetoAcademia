@@ -1,0 +1,15 @@
+inherited formFiltroServico: TformFiltroServico
+  Caption = 'Filtro Servi'#231'os'
+  ExplicitWidth = 326
+  ExplicitHeight = 302
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited btnFiltrar: TButton
+    ExplicitLeft = 123
+    ExplicitTop = 230
+  end
+  inherited btnCancelar: TButton
+    ExplicitLeft = 227
+    ExplicitTop = 230
+  end
+end

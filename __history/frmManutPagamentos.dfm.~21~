@@ -1,0 +1,94 @@
+inherited formManutPagamentos: TformManutPagamentos
+  Caption = 'formManutPagamentos'
+  ClientHeight = 375
+  ClientWidth = 330
+  ExplicitWidth = 346
+  ExplicitHeight = 414
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel [0]
+    Left = 24
+    Top = 21
+    Width = 33
+    Height = 13
+    Caption = 'Cliente'
+  end
+  object Label2: TLabel [1]
+    Left = 24
+    Top = 253
+    Width = 95
+    Height = 13
+    Caption = 'Data de Pagamento'
+  end
+  object Label3: TLabel [2]
+    Left = 24
+    Top = 101
+    Width = 96
+    Height = 13
+    Caption = 'Data do Vencimento'
+  end
+  object Label4: TLabel [3]
+    Left = 24
+    Top = 173
+    Width = 24
+    Height = 13
+    Caption = 'Valor'
+  end
+  inherited btnInserir: TButton
+    Left = 152
+    Top = 340
+    ExplicitLeft = 152
+    ExplicitTop = 340
+  end
+  inherited btnCancelar: TButton
+    Left = 241
+    Top = 340
+    ExplicitLeft = 241
+    ExplicitTop = 340
+  end
+  object DBEditValor: TDBEdit
+    Left = 24
+    Top = 192
+    Width = 121
+    Height = 21
+    DataField = 'preco'
+    DataSource = formPagamentos.DataSource1
+    TabOrder = 2
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 24
+    Top = 40
+    Width = 145
+    Height = 21
+    DataField = 'nomeCliente'
+    DataSource = formPagamentos.DataSource1
+    TabOrder = 3
+  end
+  object DBEditVencimento: TDBEdit
+    Left = 24
+    Top = 120
+    Width = 121
+    Height = 21
+    DataField = 'dataVencimento'
+    DataSource = formPagamentos.DataSource1
+    TabOrder = 4
+  end
+  object DBEditPagamento: TDBEdit
+    Left = 24
+    Top = 272
+    Width = 121
+    Height = 21
+    DataField = 'dataPagamento'
+    DataSource = formPagamentos.DataSource1
+    ReadOnly = True
+    TabOrder = 5
+  end
+  object CheckBox1: TCheckBox
+    Left = 219
+    Top = 20
+    Width = 97
+    Height = 17
+    Caption = 'CheckBoxPagamento'
+    TabOrder = 6
+  end
+end

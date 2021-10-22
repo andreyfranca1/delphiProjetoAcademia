@@ -1,0 +1,37 @@
+inherited formCidades: TformCidades
+  Caption = 'formCidades'
+  ExplicitWidth = 1119
+  ExplicitHeight = 651
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited DBNavigator1: TDBNavigator
+    Hints.Strings = ()
+  end
+  inherited DBGrid1: TDBGrid
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'idCidade'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nomeCidade'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'idEstado'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nomeEstado'
+        Visible = True
+      end>
+  end
+  inherited DataSource1: TDataSource
+    DataSet = dtmCidades.ClientDataSet1
+    OnDataChange = DataSource1DataChange
+  end
+end

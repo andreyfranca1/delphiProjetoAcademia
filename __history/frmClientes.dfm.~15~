@@ -1,0 +1,161 @@
+inherited formClientes: TformClientes
+  Caption = 'Clientes'
+  ExplicitWidth = 1135
+  ExplicitHeight = 651
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited DBGrid1: TDBGrid
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'idClientes'
+        Title.Caption = 'C'#243'digo'
+        Width = 41
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NomeCliente'
+        Title.Caption = 'Nome'
+        Width = 195
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cpfCliente'
+        Title.Caption = 'CPF'
+        Width = 82
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'rgCliente'
+        Title.Caption = 'Identidade'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'dataNascimento'
+        Title.Caption = 'Data de Nascimento'
+        Width = 111
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'pesoCliente'
+        Title.Caption = 'Peso(KG)'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'alturaCliente'
+        Title.Caption = 'Altura'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'enderecoCliente'
+        Title.Caption = 'Endere'#231'o'
+        Width = 90
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'bairroCliente'
+        Title.Caption = 'Bairro'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nomeCidade'
+        Title.Caption = 'Cidade'
+        Width = 86
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cepCliente'
+        Title.Caption = 'Cep'
+        Width = 97
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'sexoCliente'
+        Title.Caption = 'Sexo'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'idClientes'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NomeCliente'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'dataNascimento'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'enderecoCliente'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cpfCliente'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'rgCliente'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'pesoCliente'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'alturaCliente'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Cidades_idCidade'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cepCliente'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'bairroCliente'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nomeCidade'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'sexoCliente'
+        Visible = True
+      end>
+  end
+  inherited DataSource1: TDataSource
+    AutoEdit = False
+    DataSet = dtmClientes.ClientDataSet1
+    OnDataChange = DataSource1DataChange
+  end
+end

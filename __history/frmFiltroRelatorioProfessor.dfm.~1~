@@ -1,0 +1,46 @@
+inherited formFiltroRelatorioProfessor: TformFiltroRelatorioProfessor
+  Caption = 'formFiltroRelatorioProfessor'
+  ClientHeight = 189
+  ExplicitHeight = 228
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited btnImprimir: TButton
+    Top = 152
+    OnClick = btnImprimirClick
+    ExplicitTop = 152
+  end
+  inherited btnCancelar: TButton
+    Top = 152
+    ExplicitTop = 152
+  end
+  object edNome: TLabeledEdit
+    Left = 8
+    Top = 24
+    Width = 431
+    Height = 21
+    EditLabel.Width = 39
+    EditLabel.Height = 13
+    EditLabel.Caption = 'edNome'
+    TabOrder = 2
+  end
+  object edCPF: TLabeledEdit
+    Left = 8
+    Top = 88
+    Width = 233
+    Height = 21
+    EditLabel.Width = 61
+    EditLabel.Height = 13
+    EditLabel.Caption = 'LabeledEdit1'
+    TabOrder = 3
+  end
+  object edIdentidade: TLabeledEdit
+    Left = 256
+    Top = 88
+    Width = 183
+    Height = 21
+    EditLabel.Width = 61
+    EditLabel.Height = 13
+    EditLabel.Caption = 'LabeledEdit1'
+    TabOrder = 4
+  end
+end

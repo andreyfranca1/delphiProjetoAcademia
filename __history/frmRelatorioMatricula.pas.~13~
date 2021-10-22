@@ -1,0 +1,60 @@
+unit frmRelatorioMatricula;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, frmRelatorioImpressao, Data.FMTBcd,
+  QRCtrls, QuickRpt, Data.DB, Datasnap.DBClient, Datasnap.Provider,
+  Data.SqlExpr, Vcl.ExtCtrls;
+
+type
+  TformRelatorioMatricula = class(TformRelatorioImpressao)
+    DataSetProvider1: TDataSetProvider;
+    ClientDataSet1: TClientDataSet;
+    DataSource1: TDataSource;
+    ClientDataSet2: TClientDataSet;
+    SQLQuery2: TSQLQuery;
+    QRSubDetail1: TQRSubDetail;
+    QRDBText1: TQRDBText;
+    QRDBText2: TQRDBText;
+    QRDBText3: TQRDBText;
+    QRDBText4: TQRDBText;
+    QRDBText5: TQRDBText;
+    QRDBText6: TQRDBText;
+    SQLQuery1idMatricula: TIntegerField;
+    SQLQuery1dataMatricula: TDateField;
+    SQLQuery1valorMatricula: TFMTBCDField;
+    SQLQuery1ativo: TShortintField;
+    SQLQuery1NomeCliente: TStringField;
+    SQLQuery1nomeProfessor: TStringField;
+    ClientDataSet1idMatricula: TIntegerField;
+    ClientDataSet1dataMatricula: TDateField;
+    ClientDataSet1valorMatricula: TFMTBCDField;
+    ClientDataSet1ativo: TShortintField;
+    ClientDataSet1NomeCliente: TStringField;
+    ClientDataSet1nomeProfessor: TStringField;
+    ClientDataSet1SQLQuery2: TDataSetField;
+    SQLQuery2idServicosMatriculas: TIntegerField;
+    SQLQuery2nomeServico: TStringField;
+    SQLQuery2precoServico: TFMTBCDField;
+    ClientDataSet2idServicosMatriculas: TIntegerField;
+    ClientDataSet2nomeServico: TStringField;
+    ClientDataSet2precoServico: TFMTBCDField;
+    QRDBText7: TQRDBText;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  formRelatorioMatricula: TformRelatorioMatricula;
+
+implementation
+
+{$R *.dfm}
+
+uses dmConexao;
+
+end.

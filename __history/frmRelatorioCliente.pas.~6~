@@ -1,0 +1,67 @@
+unit frmRelatorioCliente;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, frmRelatorioImpressao, Data.FMTBcd,
+  QRCtrls, Data.DB, Data.SqlExpr, QuickRpt, Vcl.ExtCtrls;
+
+type
+  TformRelatorioCliente = class(TformRelatorioImpressao)
+    QRDBText1: TQRDBText;
+    QRDBText5: TQRDBText;
+    QRDBText2: TQRDBText;
+    QRDBText3: TQRDBText;
+    QRDBText4: TQRDBText;
+    QRLabel3: TQRLabel;
+    QRLabel4: TQRLabel;
+    QRLabel5: TQRLabel;
+    QRLabel6: TQRLabel;
+    QRDBText6: TQRDBText;
+    QRLabel7: TQRLabel;
+    QRLabel8: TQRLabel;
+    QRDBText7: TQRDBText;
+    SQLQuery1idClientes: TIntegerField;
+    SQLQuery1NomeCliente: TStringField;
+    SQLQuery1dataNascimento: TDateField;
+    SQLQuery1sexoCliente: TStringField;
+    SQLQuery1enderecoCliente: TStringField;
+    SQLQuery1cpfCliente: TStringField;
+    SQLQuery1rgCliente: TStringField;
+    SQLQuery1pesoCliente: TFMTBCDField;
+    SQLQuery1alturaCliente: TFMTBCDField;
+    SQLQuery1Cidades_idCidade: TIntegerField;
+    SQLQuery1cepCliente: TStringField;
+    SQLQuery1bairroCliente: TStringField;
+    SQLQuery1idCidade: TIntegerField;
+    SQLQuery1nomeCidade: TStringField;
+    SQLQuery1idEstado: TIntegerField;
+    SQLQuery1idEstado_1: TIntegerField;
+    SQLQuery1siglaEstado: TStringField;
+    QRDBText8: TQRDBText;
+    QRLabel9: TQRLabel;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    oldSQL : string;
+  end;
+
+var
+  formRelatorioCliente: TformRelatorioCliente;
+
+implementation
+
+{$R *.dfm}
+
+uses dmConexao;
+
+procedure TformRelatorioCliente.FormCreate(Sender: TObject);
+begin
+  inherited;
+  oldSQL := SQLQuery1.SQL.Text;
+end;
+
+end.

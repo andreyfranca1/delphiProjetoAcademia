@@ -1,0 +1,55 @@
+inherited formManutServico: TformManutServico
+  Caption = 'Cadastro de Servi'#231'os'
+  ClientHeight = 187
+  ClientWidth = 334
+  ExplicitWidth = 350
+  ExplicitHeight = 226
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel [0]
+    Left = 8
+    Top = 21
+    Width = 31
+    Height = 13
+    Caption = 'Nome:'
+  end
+  object Label2: TLabel [1]
+    Left = 8
+    Top = 77
+    Width = 31
+    Height = 13
+    Caption = 'Pre'#231'o:'
+  end
+  inherited btnInserir: TButton
+    Left = 157
+    Top = 154
+    TabOrder = 2
+    ExplicitLeft = 157
+    ExplicitTop = 154
+  end
+  inherited btnCancelar: TButton
+    Left = 246
+    Top = 154
+    TabOrder = 3
+    ExplicitLeft = 246
+    ExplicitTop = 154
+  end
+  object DBEditNome: TDBEdit
+    Left = 8
+    Top = 40
+    Width = 313
+    Height = 21
+    DataField = 'nomeServico'
+    DataSource = formServicos.DataSource1
+    TabOrder = 0
+  end
+  object DBEditPreco: TDBEdit
+    Left = 8
+    Top = 96
+    Width = 121
+    Height = 21
+    DataField = 'precoServico'
+    DataSource = formServicos.DataSource1
+    TabOrder = 1
+  end
+end

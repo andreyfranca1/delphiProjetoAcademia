@@ -1,0 +1,122 @@
+inherited formMatricula: TformMatricula
+  Caption = 'formMatricula'
+  ClientHeight = 616
+  ClientWidth = 1098
+  ExplicitWidth = 1114
+  ExplicitHeight = 655
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Image1: TImage
+    Width = 1098
+    Height = 616
+    ExplicitWidth = 1098
+    ExplicitHeight = 616
+  end
+  inherited DBNavigator1: TDBNavigator
+    Hints.Strings = ()
+  end
+  inherited Panel4: TPanel
+    Left = 10
+    Top = 563
+    ExplicitLeft = 10
+    ExplicitTop = 563
+  end
+  inherited btnPrimeiro: TButton
+    Left = 10
+    Top = 586
+    ExplicitLeft = 10
+    ExplicitTop = 586
+  end
+  inherited btnAnterior: TButton
+    Left = 91
+    Top = 586
+    ExplicitLeft = 91
+    ExplicitTop = 586
+  end
+  inherited btnProximo: TButton
+    Left = 180
+    Top = 586
+    ExplicitLeft = 180
+    ExplicitTop = 586
+  end
+  inherited btnUltimo: TButton
+    Left = 274
+    Top = 586
+    ExplicitLeft = 274
+    ExplicitTop = 586
+  end
+  inherited DBGrid1: TDBGrid
+    Height = 205
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'idMatricula'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'dataMatricula'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'dataVencimento'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'idCliente'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'valorMatricula'
+        Visible = True
+      end>
+  end
+  object DBGrid2: TDBGrid [22]
+    Left = 10
+    Top = 287
+    Width = 1080
+    Height = 209
+    DataSource = DataSource2
+    TabOrder = 20
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'idServicosMatriculas'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Matriculas_idMatricula'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Servicos_idServicos'
+        Visible = True
+      end>
+  end
+  inherited DataSource1: TDataSource
+    DataSet = dtmMatricula.ClientDataSet1
+    OnDataChange = DataSource1DataChange
+    Left = 528
+    Top = 168
+  end
+  object DataSource2: TDataSource
+    DataSet = dtmMatricula.ClientDataSet2
+    Left = 528
+    Top = 368
+  end
+  object DataSourceClientes: TDataSource
+    DataSet = dtmMatricula.ClientDataSetClientes
+    Left = 720
+    Top = 536
+  end
+end

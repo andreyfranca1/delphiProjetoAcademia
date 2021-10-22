@@ -1,0 +1,53 @@
+inherited formPagamentos: TformPagamentos
+  Caption = 'formPagamentos'
+  ExplicitWidth = 1135
+  ExplicitHeight = 651
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Image1: TImage
+    ExplicitLeft = 0
+  end
+  inherited DBGrid1: TDBGrid
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'idpagamento'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'idMatricula'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'dataVencimento'
+        Width = 64
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'preco'
+        Width = 64
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'dataPagamento'
+        Width = 64
+        Visible = True
+      end>
+  end
+  object btnGerarCobranca: TButton [21]
+    Left = 945
+    Top = 496
+    Width = 143
+    Height = 33
+    Caption = 'Gerar Cobran'#231'as'
+    TabOrder = 19
+  end
+  inherited DataSource1: TDataSource
+    DataSet = dtmPagamentos.ClientDataSet1
+    OnDataChange = DataSource1DataChange
+  end
+end

@@ -1,0 +1,31 @@
+unit dmMatricula;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, dmCadastro, Data.FMTBcd, Data.DB,
+  Datasnap.DBClient, Datasnap.Provider, Data.SqlExpr;
+
+type
+  TdtmCadastro1 = class(TdtmCadastro)
+    ClientDataSet1idMatricula: TIntegerField;
+    ClientDataSet1dataMatricula: TDateField;
+    ClientDataSet1dataVencimento: TDateField;
+    ClientDataSet1parcelamentoContrato: TIntegerField;
+    ClientDataSet1idCliente: TIntegerField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dtmCadastro1: TdtmCadastro1;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

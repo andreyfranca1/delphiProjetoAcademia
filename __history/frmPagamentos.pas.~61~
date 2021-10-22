@@ -1,0 +1,67 @@
+unit frmPagamentos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, frmCadastro, Data.DB, Vcl.Grids,
+  Vcl.DBGrids, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Imaging.jpeg;
+
+type
+  TformPagamentos = class(TformCadastro)
+    btnGerarCobranca: TButton;
+    procedure btnGerarCobrancaClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  formPagamentos: TformPagamentos;
+  querySQL : string;
+  idMatricula : integer;
+  proxMes : Tdate;
+  preco : currency;
+
+implementation
+
+{$R *.dfm}
+
+uses dmPagamentos, dmConexao;
+
+procedure TformPagamentos.btnGerarCobrancaClick(Sender: TObject);
+var
+  hoje: TdateTime;
+begin
+  inherited;
+  dtmPagamentos.ClientDataSet2.Open;
+  dtmPagamentos.ClientDataSet2.First;
+
+  hoje := Now;
+  proxMes := IncMonth(hoje);
+
+  while not dtmPagamentos.ClientDataSet2.Eof do
+  begin
+
+    idMatricula := dtmPagamentos.ClientDataSet2idMatricula.Value;
+    preco := dtmPagamentos.ClientDataSet2valorMatricula.AsCurrency;
+
+
+     dtmPagamentos.SQLQueryInsert.SQL.Clear;
+     dtmPagamentos.SQLQueryInsert.SQL.Add('INSERT INTO pagamentos(idMatricula, dataVencimento, preco)');
+     dtmPagamentos.SQLQueryInsert.SQL.Add('VALUES ( :idMatricula, :dataVencimento, :preco)');
+     dtmPagamentos.SQLQueryInsert.Params[0].AsInteger := idMatricula;
+     dtmPagamentos.SQLQueryInsert.Params[1].AsDate := proxMes;
+     dtmPagamentos.SQLQueryInsert.Params[2].AsCurrency := preco;
+     dtmPagamentos.SQLQueryInsert.SQL.Add('where ativo = 1');
+     dtmPagamentos.SQLQueryInsert.ExecSQL;
+     dtmPagamentos.ClientDataSet2.Next;
+
+  end;
+  ShowMessage('Cobranças Geradas');
+  dtmPagamentos.ClientDataSet2.Close;
+  dtmPagamentos.atualizarRegistros;
+end;
+
+end.

@@ -1,0 +1,140 @@
+inherited formManutMatricula: TformManutMatricula
+  Caption = 'Cadastro de Matr'#237'culas'
+  ClientHeight = 403
+  ExplicitHeight = 442
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label2: TLabel [0]
+    Left = 16
+    Top = 13
+    Width = 37
+    Height = 13
+    Caption = 'Cliente:'
+  end
+  object Label3: TLabel [1]
+    Left = 394
+    Top = 13
+    Width = 88
+    Height = 13
+    Caption = 'Data da Matr'#237'cula:'
+  end
+  object Label4: TLabel [2]
+    Left = 16
+    Top = 317
+    Width = 28
+    Height = 13
+    Caption = 'Valor:'
+  end
+  object Label1: TLabel [3]
+    Left = 16
+    Top = 69
+    Width = 50
+    Height = 13
+    Caption = 'Professor:'
+  end
+  object Label5: TLabel [4]
+    Left = 232
+    Top = 317
+    Width = 100
+    Height = 13
+    Caption = 'Data de Vencimento:'
+  end
+  inherited btnInserir: TButton
+    Left = 368
+    Top = 372
+    ExplicitLeft = 368
+    ExplicitTop = 372
+  end
+  inherited btnCancelar: TButton
+    Left = 457
+    Top = 372
+    ExplicitLeft = 457
+    ExplicitTop = 372
+  end
+  object DBLookupCliente: TDBLookupComboBox
+    Left = 16
+    Top = 32
+    Width = 312
+    Height = 21
+    DataField = 'nomeCliente'
+    DataSource = formMatricula.DataSource1
+    TabOrder = 2
+  end
+  object DBEditDataMatricula: TDBEdit
+    Left = 394
+    Top = 32
+    Width = 127
+    Height = 21
+    DataField = 'dataMatricula'
+    DataSource = formMatricula.DataSource1
+    TabOrder = 3
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 128
+    Width = 532
+    Height = 120
+    DataSource = DataSource1
+    TabOrder = 4
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'nomeServico'
+        Title.Caption = 'Nome do Servi'#231'o'
+        Width = 294
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'precoServico'
+        Title.Caption = 'Pre'#231'o Mensal'
+        Width = 95
+        Visible = True
+      end>
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 8
+    Top = 264
+    Width = 400
+    Height = 25
+    DataSource = DataSource1
+    TabOrder = 5
+  end
+  object DBEditDataVencimento: TDBEdit
+    Left = 232
+    Top = 336
+    Width = 121
+    Height = 21
+    DataField = 'dataVencimento'
+    DataSource = formMatricula.DataSource1
+    TabOrder = 6
+  end
+  object DBEditValorMatricula: TDBEdit
+    Left = 16
+    Top = 336
+    Width = 121
+    Height = 21
+    DataField = 'valorMatricula'
+    DataSource = formMatricula.DataSource1
+    TabOrder = 7
+  end
+  object DBLookupProfessor: TDBLookupComboBox
+    Left = 16
+    Top = 88
+    Width = 312
+    Height = 21
+    DataField = 'nomeProfessor'
+    DataSource = formMatricula.DataSource1
+    TabOrder = 8
+  end
+  object DataSource1: TDataSource
+    DataSet = dtmMatricula.ClientDataSet2
+    Left = 416
+    Top = 80
+  end
+end

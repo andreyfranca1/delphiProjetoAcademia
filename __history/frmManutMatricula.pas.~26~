@@ -1,0 +1,39 @@
+unit frmManutMatricula;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, frmManutCadastro, Vcl.StdCtrls,
+  Vcl.Mask, Vcl.DBCtrls, Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.DBCGrids, Data.DB,
+  Vcl.Grids, Vcl.DBGrids;
+
+type
+  TformManutMatricula = class(TformManutCadastro)
+    DBLookupComboBox1: TDBLookupComboBox;
+    Label2: TLabel;
+    Label3: TLabel;
+    DBEditDataMatricula: TDBEdit;
+    DBEditValorFinal: TDBEdit;
+    Label4: TLabel;
+    DBGrid1: TDBGrid;
+    DataSource1: TDataSource;
+    DBNavigator1: TDBNavigator;
+    DBEdit1: TDBEdit;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  formManutMatricula: TformManutMatricula;
+
+implementation
+
+{$R *.dfm}
+
+uses frmMatricula, dmMatricula;
+
+
+end.
